@@ -34,8 +34,8 @@ cargo run --bin merrow_ui -- --config config.toml --addr 127.0.0.1:8088
 UI Frontend / UI 前端
 ```bash
 cd ui
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Configuration / 設定

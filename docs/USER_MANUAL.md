@@ -14,7 +14,7 @@ English: This manual is for users. It covers installation, configuration, backte
 
 Prerequisites / 先決條件
 - Rust (stable) + Cargo
-- Node.js (for UI)
+- Node.js + pnpm (for UI)
 - PostgreSQL (optional)
 
 Build / 編譯
@@ -45,8 +45,8 @@ cargo run --bin merrow_ui -- --config config.toml --addr 127.0.0.1:8088
 Run UI frontend / 啟動 UI 前端
 ```bash
 cd ui
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 中文：前端預設呼叫 `http://127.0.0.1:8088`。  

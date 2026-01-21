@@ -224,8 +224,8 @@ cargo run --bin merrow_ui -- --config config.toml --addr 127.0.0.1:8088
 Frontend / 前端
 ```text
 cd ui
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 中文：前端會呼叫 `VITE_API_BASE`（預設 `http://127.0.0.1:8088`）。  
