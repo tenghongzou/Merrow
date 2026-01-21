@@ -1,0 +1,48 @@
+mode = "backtest" # backtest | paper | live
+exchange = "binance"
+symbol = "BTCUSDT"
+
+[orders]
+order_type = "limit" # market | limit
+limit_price_offset_bps = 10
+fee_rate = 0.001
+slippage_bps = 5
+
+[triggers]
+time_enabled = true
+time_minutes = 15 # must be multiple of 5, max 100
+price_enabled = true
+trigger_mode_any = true # true=any, false=all
+ma_window = 20
+buy_threshold = 0.02
+sell_threshold = 0.03
+
+[strategy]
+buy_cash_ratio = 0.5
+sell_pos_ratio = 0.2
+rebuy_cash_ratio = 0.5
+
+[risk]
+max_trade_ratio = 0.5
+min_cash_reserve_ratio = 0.05
+max_position_value_ratio = 0.8
+
+[backtest]
+start_time = "2024-01-01T00:00:00Z"
+end_time = "2024-02-01T00:00:00Z"
+initial_cash = 10000.0
+
+[output]
+format = "json" # none | json | csv
+path = "output/backtest_report.json"
+
+[data]
+source = "csv" # csv | exchange
+csv_path = "data/BTCUSDT_1m.csv"
+candle_interval = "1m"
+exchange_base_url = "https://api.binance.com"
+exchange_limit = 1000
+exchange_category = "spot" # bybit category (spot/linear/inverse), ignored by binance/okx
+
+[storage]
+postgres_dsn = "postgres://user:pass@localhost:5432/merrow"

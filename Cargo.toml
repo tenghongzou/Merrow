@@ -1,0 +1,30 @@
+[package]
+name = "merrow"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "merrow"
+path = "src/lib.rs"
+
+[[bin]]
+name = "merrow"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+chrono = { version = "0.4", default-features = false, features = ["alloc", "std", "clock"] }
+csv = "1"
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+hmac = "0.12"
+sha2 = "0.10"
+base64 = "0.22"
+postgres = { version = "0.19", features = ["with-chrono-0_4", "with-serde_json-1"] }
+dotenvy = "0.15"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+axum = "0.7"
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+tower-http = { version = "0.6", features = ["cors"] }

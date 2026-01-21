@@ -1,0 +1,8 @@
+# Local secrets
+.env
+.env.local
+.env.*.local
+
+# Generated outputs
+output/
+target/
