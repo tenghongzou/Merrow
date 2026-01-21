@@ -2,7 +2,19 @@
 .env
 .env.local
 .env.*.local
+config.toml
 
 # Generated outputs
 output/
 target/
+
+# UI build artifacts
+ui/node_modules/
+ui/dist/
+ui/.vite/
+ui/.svelte-kit/
+
+# Tooling
+.pnpm-store/
+.DS_Store
+Thumbs.db
